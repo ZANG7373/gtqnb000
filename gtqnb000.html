@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>光头强内核gtqnb000</title>
+  <meta name="description" content=" 光头强内核，适配多款游戏，运行稳定流畅，以善意践行公益初心" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">光头强内核</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#featured">官方小店</a>
+        <a href="#tools">服务导航</a>
+        <a href="#categories">适配项目</a>
+        <a href="#about">关于本站</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="top">
+    <!-- 森林背景层 -->
+    <div class="forest-bg">
+      <span class="tree tree-1">🌲</span>
+      <span class="tree tree-2">🌳</span>
+      <span class="tree tree-3">🌲</span>
+      <span class="tree tree-4">🌳</span>
+      <span class="tree tree-5">🌲</span>
+      <span class="tree tree-6">🌳</span>
+      <span class="cloud cloud-1">☁️</span>
+      <span class="cloud cloud-2">☁️</span>
+      <span class="sun">☀️</span>
+    </div>
+
+    <!-- 浮动工具图标 -->
+    <div class="hero-bg">
+      <span class="float float-1">⚡</span>
+      <span class="float float-2">🔧</span>
+      <span class="float float-3">💡</span>
+      <span class="float float-4">🚀</span>
+      <span class="float float-5">✨</span>
+    </div>
+
+    <!-- 光头强角色 SVG -->
+    <div class="character">
+      <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" aria-label="光头强">
+        <!-- 阴影 -->
+        <ellipse cx="100" cy="310" rx="55" ry="6" fill="rgba(0,0,0,0.25)"/>
+
+        <!-- 双腿 -->
+        <rect x="78" y="225" width="18" height="75" rx="6" fill="#1f3a5f"/>
+        <rect x="104" y="225" width="18" height="75" rx="6" fill="#1f3a5f"/>
+        <!-- 鞋 -->
+        <ellipse cx="87" cy="302" rx="14" ry="6" fill="#3a2718"/>
+        <ellipse cx="113" cy="302" rx="14" ry="6" fill="#3a2718"/>
+
+        <!-- 上衣（红色背带工作服） -->
+        <path d="M55 145 Q55 135 70 132 L130 132 Q145 135 145 145 L150 230 Q150 240 140 240 L60 240 Q50 240 50 230 Z"
+              fill="#c62828"/>
+        <!-- 背带 -->
+        <rect x="72" y="132" width="10" height="60" fill="#1f3a5f"/>
+        <rect x="118" y="132" width="10" height="60" fill="#1f3a5f"/>
+        <!-- 腰带 -->
+        <rect x="50" y="218" width="100" height="10" fill="#3a2718"/>
+        <rect x="95" y="216" width="10" height="14" fill="#ffd54f"/>
+
+        <!-- 左手（持枪位置） -->
+        <rect x="30" y="160" width="22" height="55" rx="10" fill="#c62828"/>
+        <circle cx="40" cy="218" r="11" fill="#f4c89a"/>
+        <!-- 右手 -->
+        <rect x="148" y="160" width="22" height="55" rx="10" fill="#c62828"/>
+        <circle cx="160" cy="218" r="11" fill="#f4c89a"/>
+
+        <!-- 脖子 -->
+        <rect x="88" y="118" width="24" height="18" fill="#f4c89a"/>
+
+        <!-- 头（光头） -->
+        <ellipse cx="100" cy="92" rx="42" ry="44" fill="#f4c89a"/>
+        <!-- 头顶高光 -->
+        <ellipse cx="92" cy="62" rx="14" ry="6" fill="#fff4e0" opacity="0.7"/>
+
+        <!-- 耳朵 -->
+        <ellipse cx="58" cy="95" rx="6" ry="9" fill="#e8b890"/>
+        <ellipse cx="142" cy="95" rx="6" ry="9" fill="#e8b890"/>
+
+        <!-- 眉毛 -->
+        <path d="M72 78 Q80 73 90 78" stroke="#3a2718" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M110 78 Q120 73 128 78" stroke="#3a2718" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- 眼睛 -->
+        <circle cx="82" cy="92" r="5" fill="#fff"/>
+        <circle cx="118" cy="92" r="5" fill="#fff"/>
+        <circle cx="83" cy="93" r="2.5" fill="#1a1a1a"/>
+        <circle cx="119" cy="93" r="2.5" fill="#1a1a1a"/>
+
+        <!-- 鼻子 -->
+        <ellipse cx="100" cy="104" rx="4" ry="3" fill="#e8b890"/>
+
+        <!-- 嘴（笑） -->
+        <path d="M86 115 Q100 124 114 115" stroke="#3a2718" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- 安全帽 -->
+        <path d="M58 70 Q58 38 100 38 Q142 38 142 70 L148 72 Q148 76 144 76 L56 76 Q52 76 52 72 Z"
+              fill="#ffb800"/>
+        <!-- 帽顶高光 -->
+        <ellipse cx="92" cy="50" rx="20" ry="5" fill="#fff4a3" opacity="0.8"/>
+        <!-- 帽前装饰条 -->
+        <rect x="56" y="68" width="88" height="4" fill="#e09e00"/>
+
+        <!-- 猎枪（横在身前） -->
+        <g transform="translate(0, 0)">
+          <!-- 枪托（木质） -->
+          <path d="M22 200 L52 180 L60 192 L32 215 Z" fill="#6b4423"/>
+          <path d="M22 200 L52 180 L60 192 L32 215 Z" fill="url(#wood)" opacity="0.6"/>
+          <!-- 枪身金属过渡 -->
+          <rect x="55" y="186" width="14" height="14" fill="#444"/>
+          <!-- 枪管 -->
+          <rect x="68" y="188" width="110" height="9" fill="#2a2a2a"/>
+          <rect x="68" y="188" width="110" height="3" fill="#555"/>
+          <!-- 枪管末端 -->
+          <rect x="176" y="186" width="6" height="13" fill="#1a1a1a"/>
+          <circle cx="179" cy="192.5" r="2.5" fill="#000"/>
+          <!-- 准星 -->
+          <rect x="170" y="183" width="2" height="6" fill="#1a1a1a"/>
+          <!-- 扳机护圈 -->
+          <path d="M58 200 Q58 212 68 212 L78 212 Q88 212 88 200" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+          <!-- 扳机 -->
+          <path d="M73 202 L73 209" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+        </g>
+
+        <!-- SVG 渐变定义 -->
+        <defs>
+          <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8b5a3c"/>
+            <stop offset="100%" stop-color="#5a3820"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-tag">多游戏适配 · 一站直达</p>
+      <h1 class="hero-title">光头强内核</h1>
+      <p class="hero-sub">光头强内核，适配多款游戏，运行稳定流畅，以善意践行公益初心</p>
+      <div class="hero-actions">
+        <a href="#featured" class="btn btn-primary">查看小店</a>
+        <a href="#tools" class="btn btn-ghost">浏览全部</a>
+      </div>
+    </div>
+    <div class="hero-wave"></div>
+  </section>
+  <!-- 精选推荐 -->
+  <section class="section" id="featured">
+    <div class="container">
+      <h2 class="section-title">官方小店</h2>
+      <p class="section-subtitle">店小格局大，服务赢天下</p>
+
+      <div class="featured-card">
+        <div class="featured-badge">⭐ 于勇义小店</div>
+        <div class="featured-body">
+          <div class="featured-icon">🛒</div>
+          <div class="featured-content">
+            <h3 class="featured-title">gtqnb 在线小店</h3>
+            <p class="featured-desc">
+              光头强小店-于勇义，欢迎大家光临，给大家的服务必须是杠杠的。
+            </p>
+            <ul class="featured-tags">
+              <li>和平直登号</li>
+              <li>tg质量号</li>
+              <li>和平数据号</li>
+            </ul>
+            <a href="https://luoye.chyidc.cn/shop/yuyongyi" class="btn btn-primary featured-btn" target="_blank" rel="noopener">立即访问 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务导航 -->
+  <section class="section section-alt" id="tools">
+    <div class="container">
+      <h2 class="section-title">服务导航</h2>
+      <p class="section-subtitle">光头强官方</p>
+
+      <div class="tools-grid tools-grid-top">
+        <a href="https://qm.qq.com/q/6M8MnVwFTa" class="tool-card" target="_blank" rel="noopener">
+          <div class="tool-icon qq-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="QQ群">
+              <rect width="64" height="64" rx="14" fill="#12B7F5"/>
+              <path d="M32 12 C22 12 16 19 16 28 C16 33 18 36 19 38 C18 40 16 44 16 46 C16 47 17 48 18 47 C19 47 22 45 24 43 C26 44 29 45 32 45 C35 45 38 44 40 43 C42 45 45 47 46 47 C47 48 48 47 48 46 C48 44 46 40 45 38 C46 36 48 33 48 28 C48 19 42 12 32 12 Z" fill="#fff"/>
+              <circle cx="26" cy="26" r="2.5" fill="#12B7F5"/>
+              <circle cx="38" cy="26" r="2.5" fill="#12B7F5"/>
+              <path d="M26 49 L26 54 M38 49 L38 54" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="tool-name">官方 QQ 群</h3>
+          <p class="tool-desc">交流答疑 · 第一时间通知</p>
+          <span class="tool-link">加入 QQ 群 →</span>
+        </a>
+        <a href="https://drive.uc.cn/s/d5ffdedf02f54?public=1" class="tool-card tool-card-feature" target="_blank" rel="noopener">
+          <div class="tool-icon">⭐</div>
+          <h3 class="tool-name">光头强官方网盘</h3>
+          <p class="tool-desc">适配多 · 解密稳</p>
+          <span class="tool-link">进入网盘 →</span>
+        </a>
+        <a href="https://t.me/gtqnb000" class="tool-card" target="_blank" rel="noopener">
+          <div class="tool-icon tg-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Telegram群">
+              <defs>
+                <linearGradient id="tgGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#37AEE2"/>
+                  <stop offset="100%" stop-color="#1E96C8"/>
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="14" fill="url(#tgGrad)"/>
+              <path d="M14 32 L50 18 L44 50 L34 42 L29 48 L29 39 L44 24 L26 36 Z" fill="#fff"/>
+            </svg>
+          </div>
+          <h3 class="tool-name">官方 TG 群</h3>
+          <p class="tool-desc">海外频道 · 即时同步</p>
+          <span class="tool-link">加入 TG 群 →</span>
+        </a>
+      </div>
+
+      <div class="tools-grid tools-grid-row">
+        <a href="https://v.kuaishou.com/JFNYcVaF" class="tool-card" target="_blank" rel="noopener">
+          <div class="tool-icon ks-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="快手">
+              <rect width="64" height="64" rx="14" fill="#FF6633"/>
+              <path d="M22 18 L22 46 M22 32 L40 18 M22 32 L42 46" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="tool-name">官方快手</h3>
+          <p class="tool-desc">强哥官方快手</p>
+          <span class="tool-link">点击进入 →</span>
+        </a>
+        <a href="https://v.kuaishou.com/KAWqDVqX" class="tool-card" target="_blank" rel="noopener">
+          <div class="tool-icon ks-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="快手">
+              <rect width="64" height="64" rx="14" fill="#FF6633"/>
+              <path d="M22 18 L22 46 M22 32 L40 18 M22 32 L42 46" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="tool-name">官方快手</h3>
+          <p class="tool-desc">小新官方快手</p>
+          <span class="tool-link">点击进入 →</span>
+        </a>
+        <a href="https://v.kuaishou.com/nN9GhtpY" class="tool-card" target="_blank" rel="noopener">
+          <div class="tool-icon ks-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="快手">
+              <rect width="64" height="64" rx="14" fill="#FF6633"/>
+              <path d="M22 18 L22 46 M22 32 L40 18 M22 32 L42 46" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="tool-name">官方快手</h3>
+          <p class="tool-desc">于勇义官方快手</p>
+          <span class="tool-link">点击进入 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- 适配项目 -->
+  <section class="section" id="categories">
+    <div class="container">
+      <h2 class="section-title">适配项目</h2>
+      <p class="section-subtitle">适配多款游戏且具备完美解密</p>
+
+      <div class="cat-grid cat-grid-top">
+        <a href="https://drive.uc.cn/s/d5ffdedf02f54?public=1" class="cat-card" target="_blank" rel="noopener">
+          <div class="cat-icon game-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="和平精英">
+              <defs>
+                <linearGradient id="hpGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1a3a5f"/>
+                  <stop offset="100%" stop-color="#0d2340"/>
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="14" fill="url(#hpGrad)"/>
+              <path d="M16 22 L48 22 L48 30 L36 30 L36 50 L28 50 L28 30 L16 30 Z" fill="#f7c948"/>
+              <circle cx="32" cy="14" r="3" fill="#f7c948"/>
+            </svg>
+          </div>
+          <h3>和平精英</h3>
+          <p>稳定吃鸡 · 完美解密</p>
+        </a>
+        <a href="https://drive.uc.cn/s/d5ffdedf02f54?public=1" class="cat-card" target="_blank" rel="noopener">
+          <div class="cat-icon game-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="王者荣耀">
+              <defs>
+                <linearGradient id="wzGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#c0392b"/>
+                  <stop offset="100%" stop-color="#7b1f15"/>
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="14" fill="url(#wzGrad)"/>
+              <path d="M14 20 L20 44 L26 28 L32 44 L38 28 L44 44 L50 20" stroke="#ffd54f" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="50" r="3" fill="#ffd54f"/>
+            </svg>
+          </div>
+          <h3>王者荣耀</h3>
+          <p>排位上分 · 操作丝滑</p>
+        </a>
+      </div>
+
+      <div class="cat-grid cat-grid-row">
+        <a href="https://drive.uc.cn/s/d5ffdedf02f54?public=1" class="cat-card" target="_blank" rel="noopener">
+          <div class="cat-icon game-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="无畏契约">
+              <rect width="64" height="64" rx="14" fill="#ff4655"/>
+              <path d="M14 16 L26 16 L34 38 L42 16 L50 16 L36 50 L32 50 Z" fill="#fff"/>
+            </svg>
+          </div>
+          <h3>无畏契约</h3>
+          <p>FPS 神枪 · 战术压制</p>
+        </a>
+        <a href="https://drive.uc.cn/s/d5ffdedf02f54?public=1" class="cat-card" target="_blank" rel="noopener">
+          <div class="cat-icon game-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="PUBG">
+              <defs>
+                <linearGradient id="pubgGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f5a623"/>
+                  <stop offset="100%" stop-color="#d97706"/>
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="14" fill="#1a1a1a"/>
+              <text x="32" y="42" font-family="Arial, sans-serif" font-weight="900" font-size="20" fill="url(#pubgGrad)" text-anchor="middle">PUBG</text>
+            </svg>
+          </div>
+          <h3>PUBG</h3>
+          <p>国际服 · 战神归来</p>
+        </a>
+        <a href="https://drive.uc.cn/s/d5ffdedf02f54?public=1" class="cat-card" target="_blank" rel="noopener">
+          <div class="cat-icon game-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="香肠派对">
+              <defs>
+                <linearGradient id="xcGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffb347"/>
+                  <stop offset="100%" stop-color="#ff8c42"/>
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="14" fill="url(#xcGrad)"/>
+              <ellipse cx="32" cy="32" rx="20" ry="9" fill="#fde2c4" stroke="#a05a2c" stroke-width="2"/>
+              <ellipse cx="24" cy="32" rx="2" ry="2" fill="#a05a2c"/>
+              <ellipse cx="40" cy="32" rx="2" ry="2" fill="#a05a2c"/>
+            </svg>
+          </div>
+          <h3>香肠派对</h3>
+          <p>萌系吃鸡 · 派对开黑</p>
+        </a>
+        <div class="cat-card">
+          <div class="cat-icon game-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="神秘嘉宾">
+              <rect width="64" height="64" rx="14" fill="#4a3f7c"/>
+              <text x="32" y="44" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">?</text>
+            </svg>
+          </div>
+          <h3>神秘嘉宾</h3>
+          <p>暂未确定</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于本站 -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <h2 class="section-title">关于本站</h2>
+      <div class="about-wrap">
+        <p>
+          <strong>光头强内核</strong> 光头强专属游戏内核，经过优化调试，运行稳定、体验流畅。本产品秉持公益初心，无收费项目，面向大家免费开放使用。
+        </p>
+        <p>
+          本工具会持续更新，如果你想加入光头强大家庭吃米，
+          可以通过此网站联系强哥或新哥加入光头强传媒。
+        </p>
+        <ul class="about-list">
+          <li><span class="about-key">站点定位</span><span class="about-val">光头强内核</span></li>
+          <li><span class="about-key">更新频率</span><span class="about-val">持续更新</span></li>
+          <li><span class="about-key">加入方式</span><span class="about-val">人工审核 </span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-title">🌐 光头强内核</p>
+      <p class="footer-note">本页面为光头强内核导航展示页，所有外链工具版权归原作者所有，本站仅作分享。</p>
+      </p>
+      <p>本网站任何工具为公益，禁止盗卖，且不允许在中国大陆进行传播，违规者将自行承担责任，本站概不负责。
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
