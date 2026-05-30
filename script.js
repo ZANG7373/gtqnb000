@@ -79,9 +79,6 @@ window.addEventListener('resize', () => {
 const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 const musicPlayer = document.getElementById('musicPlayer');
-const musicOverlay = document.getElementById('musicOverlay');
-const musicOverlayBtn = document.getElementById('musicOverlayBtn');
-const musicOverlaySkip = document.getElementById('musicOverlaySkip');
 let isPlaying = false;
 
 function setPlaying(state) {
@@ -93,49 +90,26 @@ function setPlaying(state) {
   }
 }
 
-function hideOverlay() {
-  musicOverlay.classList.add('hidden');
-}
-
-function tryPlay() {
-  bgMusic.play().then(() => {
-    setPlaying(true);
-  }).catch(() => {});
-}
-
-function toggleMusic(e) {
-  e.stopPropagation();
+function toggleMusic() {
   if (isPlaying) {
     bgMusic.pause();
     setPlaying(false);
   } else {
-    tryPlay();
+    bgMusic.play().then(() => {
+      setPlaying(true);
+    }).catch(() => {});
   }
 }
 
 musicBtn.addEventListener('click', toggleMusic);
 
-// 遮罩按钮事件
-musicOverlayBtn.addEventListener('click', () => {
-  tryPlay();
-  hideOverlay();
-  sessionStorage.setItem('musicOverlayClosed', '1');
-});
-
-musicOverlaySkip.addEventListener('click', () => {
-  hideOverlay();
-  sessionStorage.setItem('musicOverlayClosed', '1');
-});
-
-// 检测是否已关闭过遮罩（sessionStorage）
-if (sessionStorage.getItem('musicOverlayClosed')) {
-  hideOverlay();
-  tryPlay();
-} else {
-  musicOverlay.addEventListener('click', function onOverlayClick(e) {
-    if (e.target === musicOverlay) {
-      hideOverlay();
-      sessionStorage.setItem('musicOverlayClosed', '1');
-    }
-  });
+// 点击页面任意位置触发播放（兼容QQ/微信）
+function unlockMusic() {
+  if (!isPlaying) {
+    bgMusic.play().then(() => {
+      setPlaying(true);
+      document.removeEventListener('click', unlockMusic);
+    }).catch(() => {});
+  }
 }
+document.addEventListener('click', unlockMusic);
