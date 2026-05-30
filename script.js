@@ -80,6 +80,7 @@ const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 const musicPlayer = document.getElementById('musicPlayer');
 let isPlaying = false;
+let unlockDone = false;
 
 function setPlaying(state) {
   isPlaying = state;
@@ -96,7 +97,8 @@ function tryPlay() {
   }).catch(() => {});
 }
 
-function toggleMusic() {
+function toggleMusic(e) {
+  e.stopPropagation();
   if (isPlaying) {
     bgMusic.pause();
     setPlaying(false);
@@ -111,10 +113,12 @@ musicBtn.addEventListener('click', toggleMusic);
 bgMusic.volume = 0.5;
 window.addEventListener('load', tryPlay);
 
-// 如果自动播放被阻止，点击页面任意位置触发
-function unlockPlay() {
+// 如果自动播放被阻止，点击页面任意位置触发一次
+function unlockPlay(e) {
+  if (e.target.closest('.music-player')) return;
   if (!isPlaying) tryPlay();
   if (isPlaying) {
+    unlockDone = true;
     document.removeEventListener('click', unlockPlay);
   }
 }
