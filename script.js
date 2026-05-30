@@ -74,3 +74,48 @@ window.addEventListener('resize', () => {
     navLinks.style.display = 'none';
   }
 });
+
+// 背景音乐播放器
+const bgMusic = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+const musicPlayer = document.getElementById('musicPlayer');
+let isPlaying = false;
+
+function setPlaying(state) {
+  isPlaying = state;
+  if (state) {
+    musicPlayer.classList.add('music-playing');
+  } else {
+    musicPlayer.classList.remove('music-playing');
+  }
+}
+
+function tryPlay() {
+  bgMusic.play().then(() => {
+    setPlaying(true);
+  }).catch(() => {});
+}
+
+function toggleMusic() {
+  if (isPlaying) {
+    bgMusic.pause();
+    setPlaying(false);
+  } else {
+    tryPlay();
+  }
+}
+
+musicBtn.addEventListener('click', toggleMusic);
+
+// 页面加载后自动播放
+bgMusic.volume = 0.5;
+window.addEventListener('load', tryPlay);
+
+// 如果自动播放被阻止，点击页面任意位置触发
+function unlockPlay() {
+  if (!isPlaying) tryPlay();
+  if (isPlaying) {
+    document.removeEventListener('click', unlockPlay);
+  }
+}
+document.addEventListener('click', unlockPlay);
