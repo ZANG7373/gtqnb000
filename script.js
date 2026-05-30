@@ -79,8 +79,10 @@ window.addEventListener('resize', () => {
 const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 const musicPlayer = document.getElementById('musicPlayer');
+const musicOverlay = document.getElementById('musicOverlay');
+const musicOverlayBtn = document.getElementById('musicOverlayBtn');
+const musicOverlaySkip = document.getElementById('musicOverlaySkip');
 let isPlaying = false;
-let unlockDone = false;
 
 function setPlaying(state) {
   isPlaying = state;
@@ -89,6 +91,10 @@ function setPlaying(state) {
   } else {
     musicPlayer.classList.remove('music-playing');
   }
+}
+
+function hideOverlay() {
+  musicOverlay.classList.add('hidden');
 }
 
 function tryPlay() {
@@ -109,17 +115,27 @@ function toggleMusic(e) {
 
 musicBtn.addEventListener('click', toggleMusic);
 
-// 页面加载后自动播放
-bgMusic.volume = 0.5;
-window.addEventListener('load', tryPlay);
+// 遮罩按钮事件
+musicOverlayBtn.addEventListener('click', () => {
+  tryPlay();
+  hideOverlay();
+  sessionStorage.setItem('musicOverlayClosed', '1');
+});
 
-// 如果自动播放被阻止，点击页面任意位置触发一次
-function unlockPlay(e) {
-  if (e.target.closest('.music-player')) return;
-  if (!isPlaying) tryPlay();
-  if (isPlaying) {
-    unlockDone = true;
-    document.removeEventListener('click', unlockPlay);
-  }
+musicOverlaySkip.addEventListener('click', () => {
+  hideOverlay();
+  sessionStorage.setItem('musicOverlayClosed', '1');
+});
+
+// 检测是否已关闭过遮罩（sessionStorage）
+if (sessionStorage.getItem('musicOverlayClosed')) {
+  hideOverlay();
+  tryPlay();
+} else {
+  musicOverlay.addEventListener('click', function onOverlayClick(e) {
+    if (e.target === musicOverlay) {
+      hideOverlay();
+      sessionStorage.setItem('musicOverlayClosed', '1');
+    }
+  });
 }
-document.addEventListener('click', unlockPlay);
