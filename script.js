@@ -90,7 +90,8 @@ function setPlaying(state) {
   }
 }
 
-function toggleMusic() {
+function toggleMusic(e) {
+  e.stopPropagation();
   if (isPlaying) {
     bgMusic.pause();
     setPlaying(false);
@@ -102,14 +103,15 @@ function toggleMusic() {
 }
 
 musicBtn.addEventListener('click', toggleMusic);
+musicBtn.addEventListener('touchend', toggleMusic);
 
-// 点击页面任意位置触发播放（兼容QQ/微信）
+// 点击/触摸页面任意位置触发播放（兼容QQ/微信）
 function unlockMusic() {
   if (!isPlaying) {
     bgMusic.play().then(() => {
       setPlaying(true);
-      document.removeEventListener('click', unlockMusic);
     }).catch(() => {});
   }
 }
 document.addEventListener('click', unlockMusic);
+document.addEventListener('touchstart', unlockMusic);
