@@ -80,6 +80,7 @@ const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 const musicPlayer = document.getElementById('musicPlayer');
 let isPlaying = false;
+let hasUnlocked = false;
 
 function setPlaying(state) {
   isPlaying = state;
@@ -90,28 +91,30 @@ function setPlaying(state) {
   }
 }
 
+function doPlay() {
+  bgMusic.load();
+  bgMusic.play().then(() => {
+    setPlaying(true);
+    hasUnlocked = true;
+  }).catch(() => {});
+}
+
 function toggleMusic(e) {
+  e.preventDefault();
   e.stopPropagation();
   if (isPlaying) {
     bgMusic.pause();
     setPlaying(false);
   } else {
-    bgMusic.play().then(() => {
-      setPlaying(true);
-    }).catch(() => {});
+    doPlay();
   }
 }
 
 musicBtn.addEventListener('click', toggleMusic);
-musicBtn.addEventListener('touchend', toggleMusic);
 
-// 点击/触摸页面任意位置触发播放（兼容QQ/微信）
+// 任意触摸/点击触发播放（一次）
 function unlockMusic() {
-  if (!isPlaying) {
-    bgMusic.play().then(() => {
-      setPlaying(true);
-    }).catch(() => {});
-  }
+  if (!hasUnlocked) doPlay();
 }
+document.addEventListener('touchstart', unlockMusic, { passive: true });
 document.addEventListener('click', unlockMusic);
-document.addEventListener('touchstart', unlockMusic);
